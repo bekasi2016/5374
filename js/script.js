@@ -82,7 +82,7 @@ var TrashModel = function(_lable, _cell, remarks) {
 
   for (var j in this.dayCell) {
     if (this.dayCell[j].length == 1) {
-      result_text += "every" + this.dayCell[j] + "曜日 ";
+      result_text += "毎週" + this.dayCell[j] + "曜日 ";
     } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) != "*") {
       result_text += "第" + this.dayCell[j].charAt(1) + this.dayCell[j].charAt(0) + "曜日 ";
     } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) == "*") {
@@ -479,13 +479,13 @@ $(function() {
 
           var leftDayText = "";
           if (leftDay == 0) {
-            leftDayText = "Today";
+            leftDayText = "今日";
           } else if (leftDay == 1) {
-            leftDayText = "Tomorrow";
+            leftDayText = "明日";
           } else if (leftDay == 2) {
-            leftDayText = "Day after tomorrow"
+            leftDayText = "明後日"
           } else {
-            leftDayText = "after " + leftDay + "days";
+            leftDayText = leftDay + "日後";
           }
 
           styleHTML += '#accordion-group' + d_no + '{background-color:  ' + description.background + ';} ';
