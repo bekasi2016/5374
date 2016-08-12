@@ -82,7 +82,7 @@ var TrashModel = function(_lable, _cell, remarks) {
 
   for (var j in this.dayCell) {
     if (this.dayCell[j].length == 1) {
-      result_text += "毎週" + this.dayCell[j] + "曜日 ";
+      result_text += "every" + this.dayCell[j] + "曜日 ";
     } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) != "*") {
       result_text += "第" + this.dayCell[j].charAt(1) + this.dayCell[j].charAt(0) + "曜日 ";
     } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) == "*") {
@@ -99,7 +99,7 @@ var TrashModel = function(_lable, _cell, remarks) {
     return this.getRemark() + this.dayLabel + " " + result_text;
   }
 
-  var day_enum = ["日", "月", "火", "水", "木", "金", "土"];
+  var day_enum = ["日", "M", "火", "水", "木", "金", "土"];
 
   function getDayIndex(str) {
     for (var i = 0; i < day_enum.length; i++) {
@@ -479,13 +479,13 @@ $(function() {
 
           var leftDayText = "";
           if (leftDay == 0) {
-            leftDayText = "今日";
+            leftDayText = "Today";
           } else if (leftDay == 1) {
-            leftDayText = "明日";
+            leftDayText = "Tomorrow";
           } else if (leftDay == 2) {
-            leftDayText = "明後日"
+            leftDayText = "Day after tomorrow"
           } else {
-            leftDayText = leftDay + "日後";
+            leftDayText = "after " + leftDay + "days";
           }
 
           styleHTML += '#accordion-group' + d_no + '{background-color:  ' + description.background + ';} ';
